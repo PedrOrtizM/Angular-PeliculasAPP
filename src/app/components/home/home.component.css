@@ -1,0 +1,14 @@
+.sobrepuesto {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: azure;
+    opacity: 0.6;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 180px;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+}

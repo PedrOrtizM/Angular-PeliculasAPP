@@ -1,0 +1,13 @@
+<h1 class="text-success">
+    <i class="fas fa-video text-dark"></i> PeliculasAPP
+</h1>
+
+<hr>
+<div class="contenedor" *ngFor="let pelicula of peliculas">
+    <img src="https://image.tmdb.org/t/p/w300{{ pelicula.backdrop_path }}" class="img-fluid img-thumbnail">
+    <div class=" sobrepuesto">
+        <p style="color: black">
+            {{pelicula.original_title}}
+        </p>
+    </div>
+</div>

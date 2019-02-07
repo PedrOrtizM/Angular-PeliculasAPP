@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <a [routerLink]="[ '/home' ]" class="navbar-brand text-light"><i class="fas fa-video"></i></a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        
+            <span class="navbar-toggler-icon"></span>
+   
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+        <ul class="navbar-nav mr-auto ">
+
+            <li class="nav-item active">
+                <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="nav-link text-light"> 
+                 Home 
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a [routerLink]="[ '/search' ]" routerLinkActive="active" class="nav-link text-light">
+                Search
+                </a>
+            </li>
+
+        </ul>
+
+        <form class="form-inline">
+
+            <input id="ocultar" class="form-control mr-1" type="text" placeholder="Search">
+            <button type="button" class="btn btn-outline-success" id="btnocultar">
+                    Buscar
+                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+</nav>
