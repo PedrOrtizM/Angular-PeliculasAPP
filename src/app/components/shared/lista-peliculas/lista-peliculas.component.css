@@ -8,9 +8,10 @@
 .contenedor {
     position: relative;
     display: inline-block;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     margin-top: 1%;
     text-align: left;
+    cursor: pointer;
 }
 
 p {
@@ -21,4 +22,9 @@ p {
     opacity: 0.6;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold
+}
+
+.noimagen {
+    width: 100%;
+    height: 180px;
 }

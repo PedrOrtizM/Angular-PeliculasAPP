@@ -1,13 +1,23 @@
-<h1 class="text-success">
-    <i class="fas fa-video text-dark"></i> PeliculasAPP
-</h1>
+<div class="col-sm-10">
+    <h1 class="display-3 text-success mt-3">
+        <i class="fas fa-video text-dark"></i> PeliculAPP
+    </h1>
+    <hr>
+</div>
 
-<hr>
-<div class="contenedor" *ngFor="let pelicula of peliculas">
-    <img src="https://image.tmdb.org/t/p/w300{{ pelicula.backdrop_path }}" class="img-fluid img-thumbnail">
-    <div class=" sobrepuesto">
-        <p style="color: black">
-            {{pelicula.original_title}}
-        </p>
-    </div>
+<app-loading [cargando]="cargando"></app-loading>
+
+
+<div *ngIf="!cargando">
+
+    <app-lista-peliculas [peliculas]="peliculasCar" titulo="Cartelera">
+    </app-lista-peliculas>
+
+    <app-lista-peliculas [peliculas]="peliculas" titulo="TOP Populares">
+    </app-lista-peliculas>
+
+    <app-lista-peliculas [peliculas]="peliculasKids" titulo="TOP Populares entre los pequeños">
+    </app-lista-peliculas>
+
+
 </div>

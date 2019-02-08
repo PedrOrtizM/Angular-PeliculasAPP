@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-    <a [routerLink]="[ '/home' ]" class="navbar-brand text-light"><i class="fas fa-video"></i></a>
+    <a [routerLink]="[ '/home' ]" class="navbar-brand text-light"><i class="fas fa-video"></i> PeliculAPP | </a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         
@@ -12,23 +12,23 @@
 
         <ul class="navbar-nav mr-auto ">
 
-            <li class="nav-item active">
-                <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="nav-link text-light"> 
+            <li class="nav-item" routerLinkActive="active">
+                <a [routerLink]="['home']" class="nav-link text-light"> 
                  Home 
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a [routerLink]="[ '/search' ]" routerLinkActive="active" class="nav-link text-light">
+            <li class="nav-item" routerLinkActive="active">
+                <a [routerLink]="['search']" class="nav-link text-light">
                 Search
                 </a>
             </li>
 
         </ul>
 
-        <form class="form-inline">
+        <form class="form-inline" (ngSubmit)="busqueda(termino.value)">
 
-            <input id="ocultar" class="form-control mr-1" type="text" placeholder="Search">
+            <input id="ocultar" class="form-control mr-1" type="text" placeholder="Search" #termino>
             <button type="button" class="btn btn-outline-success" id="btnocultar">
                     Buscar
                     <i class="fa fa-search-plus" aria-hidden="true"></i>

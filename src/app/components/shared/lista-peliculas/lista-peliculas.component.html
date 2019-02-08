@@ -1,0 +1,13 @@
+<div class="mb-4">
+    <h3 class="text-dark">{{ titulo }}</h3>
+
+    <div [routerLink]="[ '/pelicula', pelicula.id , 'home', '/' ]" class="contenedor" *ngFor="let pelicula of peliculas">
+        <img src="{{ pelicula | noimage:false }}" [ngClass]="{'noimagen': !pelicula.backdrop_path}" class="img-fluid img-thumbnail">
+        <div class="sobrepuesto">
+            <p>
+                {{pelicula.original_title}}
+            </p>
+        </div>
+    </div>
+
+</div>

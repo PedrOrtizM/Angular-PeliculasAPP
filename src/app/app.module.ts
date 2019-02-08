@@ -12,6 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { ListaPeliculasComponent } from './components/shared/lista-peliculas/lista-peliculas.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,12 +24,17 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ListaPeliculasComponent,
+    NoimagePipe,
+    PeliculaComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

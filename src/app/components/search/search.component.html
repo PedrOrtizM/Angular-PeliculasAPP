@@ -1,3 +1,32 @@
-<p>
-  search works!
-</p>
+<div class="col-md-10">
+    <h1 class="display-3 text-success mt-3">
+        <i class="fas fa-video text-dark"></i> PeliculAPP
+    </h1>
+    <hr>
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Buscar: </span>
+        </div>
+        <input (keyup)="buscar(termino)" name="termino" [(ngModel)]="termino" placeholder="Nombre película" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+</div>
+
+
+<div class="col-md-10">
+
+    <div class="card-columns">
+        <div class="card" *ngFor="let pelicula of peliculas">
+            <img src="{{ pelicula | noimage }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ pelicula.original_title}}</h5>
+                <p class="card-text text-justify">{{pelicula.overview | slice:0:120}}...</p>
+                <button [routerLink]="[ '/pelicula', pelicula.id ,'search',termino]" class="btn btn-sm btn-outline-success btn-block"> Ver más </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

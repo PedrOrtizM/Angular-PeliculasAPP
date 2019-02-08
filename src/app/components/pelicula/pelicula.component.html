@@ -1,0 +1,43 @@
+<app-loading [cargando]="cargando">
+</app-loading>
+
+<div class="row" *ngIf="!cargando">
+
+    <div class="col-md-10">
+        <h2>{{ pelicula.original_title }}</h2>
+        <hr>
+    </div>
+
+    <div class="col-sm-3 mr-2">
+        <img src="{{ pelicula | noimage:true }}" style="width: 100%" class="img-fluid img-thumbnail block">
+        <button [routerLink]="[ '/'+regresarA , term]" type="button" class="btn btn-outline-danger btn-block">
+        Regresar
+        </button>
+    </div>
+
+    <div class="col-md-6 ml-4 mt-3">
+        <p class="text-justify font-italic">
+            <strong> Sinopsis</strong>
+            <br> {{pelicula.overview}}
+            <br>
+            <strong> Status </strong>
+            <br> {{pelicula.status}}
+            <br>
+            <strong> Género(s)</strong>
+            <br>
+            <span *ngFor="let gen of pelicula.genres" class="badge badge-pill badge-success">
+                {{gen.name}}
+            </span>
+            <br>
+            <strong> Idioma(s)</strong>
+            <br>
+            <span *ngFor="let len of pelicula.spoken_languages" class="badge badge-pill badge-primary">
+                    {{len.name}}
+            </span>
+        </p>
+
+    </div>
+
+
+
+</div>
