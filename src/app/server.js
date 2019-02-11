@@ -1,16 +1,18 @@
-//Install express server
-const express = require('express');
-const path = require('path');
-
+const express = require('express')
 const app = express();
 
-// Serve only the static files form the dist directory
+const port = process.env.PORT || 8080; // Para obtener el puerto donde heroku va a escuchar
+
+
+//  MiddleWare: Un callback Se ejecuta siempre sin importar la URL
+//  Todo lo que se ponga en esa carpeta será de acceso público
 app.use(express.static('./dist/PeliculAPP'));
-
-app.get('/*', function(req, res) {
-
-    res.sendFile(path.join(__dirname, '/dist/PeliculAPP/index.html'));
+app.get('/', (req, res) => {
+    res.render('./index.html', {
+        nombre: 'PedrOrtizM',
+    });
 });
 
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+app.listen(port, () => {
+    console.log('Escuchando peticiones en el puerto: ' + port);
+});
